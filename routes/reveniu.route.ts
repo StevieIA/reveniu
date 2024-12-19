@@ -2,7 +2,7 @@ import { Router, Request, Response } from "express";
 import { getSuscriberById } from "../reveniu_suscription/getSuscriber";
 import { sendSuscriber } from "../reveniu_suscription/sendSuscriber";
 const REVENIU_SECRET_KEY_SANDBOX = process.env.REVENIU_SECRET_KEY_SANDBOX;
-
+const REVENIU_SECRET_KEY_PROD = process.env.REVENIU_SECRET_KEY_PROD;
 export const reveniuRouter = Router();
 
 // Endpoint de escucha para las suscripciones y bajas de REVENIU
@@ -10,7 +10,7 @@ reveniuRouter.post("/webhook/subscription", async (req, res): Promise<any> => {
   const headers = req.headers;
   const { data } = req.body;
   const reveniuSecretKey = headers["reveniu-secret-key"];
-  if (reveniuSecretKey !== REVENIU_SECRET_KEY_SANDBOX) {
+  if (reveniuSecretKey !== REVENIU_SECRET_KEY_PROD) {
     return res.status(401).send("Unauthorized");
   }
   console.log("Webhook received: after reveniu secret key ");
