@@ -9,6 +9,6 @@ app.use(express.json());
 app.use(cors());
 app.use(reveniuRouter, tallyRouter);
 
-app.listen(3000, () => {
+app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
