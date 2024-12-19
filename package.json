@@ -1,0 +1,25 @@
+{
+  "name": "reveniu",
+  "module": "index.ts",
+  "type": "module",
+  "scripts": {
+    "start": "bun index.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/json2csv": "^5.0.7",
+    "@types/nodemailer": "^6.4.17"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "airtable": "^0.12.2",
+    "cors": "^2.8.5",
+    "express": "^4.21.1",
+    "json2csv": "^6.0.0-alpha.2",
+    "nodemailer": "^6.9.16"
+  }
+}
